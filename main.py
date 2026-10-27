@@ -87,3 +87,27 @@ non_metals = {
         'atomic_mass': 222
     }
 }
+
+def search_details(event):
+    symbol = document.getElementById("Element").value.strip()
+
+    element = non_metals.get(symbol, {
+        "name": "Element does not exist in the non-metals list. Make sure it is the element symbol with the proper cases.",
+        "atomic_number": "-",
+        "atomic_mass": "-"
+    })
+
+    result = document.getElementById("result")
+
+    result.innerHTML = (
+        f'<div class="element-symbol">{symbol}</div>'
+        f'<div class="element-name">{element["name"]}</div>'
+        f'<div class="element-info">'
+        f'<span class="element-label">Atomic Number</span>'
+        f'<span class="element-value">{element["atomic_number"]}</span>'
+        f'</div>'
+        f'<div class="element-info">'
+        f'<span class="element-label">Atomic Mass</span>'
+        f'<span class="element-value">{element["atomic_mass"]}</span>'
+        f'</div>'
+    )

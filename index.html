@@ -91,18 +91,60 @@
         cursor: pointer;
     }
 
-    #result {
-        margin-top: 20px;
-        padding: 12px 18px;
-        background: rgba(216, 243, 220, 0.395);
-        border-left: 5px solid #8fbc8f;
-        border-radius: 8px;
-        font-size: 15px;
-        color: #ffffff;
-        box-shadow: 0 0 10px rgba(46, 139, 87, 0.5);
-        white-space: pre-line;
-    }
+#result {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(5, 25, 17, 0.545);
+    border: 1px solid rgba(143, 188, 143, 0.35);
+    border-radius: 14px;
+    box-shadow: 0 0 20px rgba(46, 139, 87, 0.15);
+    color: white;
+    text-align: left;
+    line-height: 1.8;
+    overflow-wrap: anywhere;
+}
 
+.element-symbol {
+    font-size: 52px;
+    font-weight: bold;
+    color: #b7efc5;
+    text-shadow: 0 0 15px rgba(82, 183, 136, 0.5);
+}
+
+.element-name {
+    font-size: 15px;
+    color: white;
+    margin-bottom: 12px;
+}
+
+.element-info {
+    background: rgba(46, 139, 87, 0.15);
+    border: 1px solid rgba(143, 188, 143, 0.2);
+    border-radius: 8px;
+    padding: 10px;
+    margin-top: 8px;
+}
+
+.element-label {
+    display: block;
+    color: #95d5b2;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.element-value {
+    display: block;
+    color: white;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.error-message {
+    color: #ffb4a2;
+    text-align: center;
+    font-size: 13px;
+}
 
     #result h3 {
     font-size: 20px;
@@ -120,7 +162,7 @@
         margin-bottom: 0;
     }
     
-    .add_member {
+    .search_details {
         width: auto;
         padding: 10px 18px;
         margin-top: 10px;
@@ -134,30 +176,28 @@
         transition: all 0.3s ease;
     }
 
-    .add_member:hover {
+    .search_details:hover {
         transform: scale(1.02);
         box-shadow:
             0 0 10px #5fa777,
             0 0 20px #4c956c,
             0 0 35px rgba(46, 139, 87, 0.7);
     }
-
-    
     </style>
 </head>
 <body>
-    <h1>Element Checker</h1>
+    <h1>Non-metals Elements</h1>
+    <p>Periodic Table Information Finder</p>
 
     <div class="box">
-        <p>Enter the Element</p>
+        <p>Enter the element symbol to check for its full details. Remember that this is case sensitive.</p>
 
-        <input type="text" id="Fname" placeholder="First Name">
-        <input type="text" id="Lname" placeholder="Last Name">
+        <input type="text" id="Element" placeholder="Enter the element symbol">
     
         <br><br>
         
-        <button class="add_member" py-click="add_member">
-            Add member
+        <button class="search_details" py-click="search_details">
+            Search details
         </button>
     
         <div id="result"></div>
