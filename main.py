@@ -86,18 +86,18 @@ non_metals = {
         'atomic_number': 86,
         'atomic_mass': 222
     }
-}
+} # dictionaries inside a dictionary
 
 def search_details(event):
-    symbol = document.getElementById("Element").value.strip()
+    symbol = document.getElementById("Element").value.strip() #gets user input (case sensitive)
 
     element = non_metals.get(symbol, {
         "name": "Element does not exist in the non-metals list. Make sure it is the element symbol with the proper cases.",
         "atomic_number": "-",
         "atomic_mass": "-"
-    })
+    }) # if user input is not found in the non_metals list
 
-    result = document.getElementById("result")
+    result = document.getElementById("result") #displays the result
 
     result.innerHTML = (
         f'<div class="element-symbol">{symbol}</div>'
@@ -110,4 +110,4 @@ def search_details(event):
         f'<span class="element-label">Atomic Mass</span>'
         f'<span class="element-value">{element["atomic_mass"]}</span>'
         f'</div>'
-    )
+    ) #css style
